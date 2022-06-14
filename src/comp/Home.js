@@ -65,7 +65,7 @@ function Home() {
   }
 
   // buttons 
-  const btns = ["C","/",9,8,7,"x",6,5,4,"+",3,2,1,"-",0,".","Del","="]
+  const btns = ["C",9,"/",8,7,6,"x",5,4,3,"+",2,1,0,"-",".","Del","="]
 
   return (
     <div className={`${classes.home} ${classes.dismid}`}>
