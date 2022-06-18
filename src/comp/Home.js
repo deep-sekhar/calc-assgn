@@ -12,7 +12,7 @@ function Home() {
     try{
       // compute 
       let result = Function("return " + res)();
-      console.log(result)
+      // console.log(result)
       setRes(result.toString()); 
     }
     catch(e){
@@ -50,8 +50,22 @@ function Home() {
     } 
   }
 
+  // to prevent multiple calls when keydown called using a variable so that device not hanged
+  const [pressed, setPressed] = useState(0)
+  document.addEventListener('keydown', function(event){
+    if(pressed == 0){
+    if(event.key === "Backspace") handler("Del")
+    else if(event.key === "=") findValue()
+    else if(event.key === "0" || event.key === "1" || event.key === "2" || event.key === "3"|| event.key === "4"|| event.key === "5"|| event.key === "6"|| event.key === "7"|| event.key === "8"|| event.key === "9"|| event.key === "+"|| event.key === "-"|| event.key === "*"|| event.key === "/") handler(event.key)
+    setPressed(1);
+    }
+  })
+  document.addEventListener('keyup', function(event){
+    setPressed(0);
+  })
+  
   // buttons 
-  const btns = ["C",9,"/",8,7,6,"*",5,4,3,"+",2,1,0,"-",".","Del","="]
+  const btns = ["C","9","/","8","7","6","*","5","4","3","+","2","1","0","-",".","Del","="]
 
   return (
     <div className={`${classes.home} ${classes.dismid}`}>

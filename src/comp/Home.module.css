@@ -19,7 +19,7 @@
 }
 
 .result{
-    font-size: 1.6rem;
+    font-size: 2rem;
     width: 405px;
     height: 90px;
     scrollbar-width: none;
@@ -53,5 +53,4 @@
     justify-content:space-evenly;
     align-items: center;
     border-radius: 30px;
-    /* background-color: red; */
 }
