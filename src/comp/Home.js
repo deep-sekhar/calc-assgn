@@ -13,6 +13,7 @@ function Home() {
       // compute 
       let result = Function("return " + res)();
       // console.log(result)
+      result = (Math.round(result*100))/100;
       setRes(result.toString()); 
     }
     catch(e){
@@ -34,7 +35,6 @@ function Home() {
       setRes("");
       return;
     }
-
     // if = pressed 
     if(arg === "=") findValue();
     // delete a character 
@@ -55,8 +55,8 @@ function Home() {
   document.addEventListener('keydown', function(event){
     if(pressed == 0){
     if(event.key === "Backspace") handler("Del")
-    else if(event.key === "=") findValue()
-    else if(event.key === "0" || event.key === "1" || event.key === "2" || event.key === "3"|| event.key === "4"|| event.key === "5"|| event.key === "6"|| event.key === "7"|| event.key === "8"|| event.key === "9"|| event.key === "+"|| event.key === "-"|| event.key === "*"|| event.key === "/") handler(event.key)
+    else if(event.key === "=" || event.key==="Enter") findValue()
+    else if(event.key === "0" || event.key === "1" || event.key === "2" || event.key === "3"|| event.key === "4"|| event.key === "5"|| event.key === "6"|| event.key === "7"|| event.key === "8"|| event.key === "9"|| event.key === "+"|| event.key === "-"|| event.key === "*"|| event.key === "/" ||event.key === ".") handler(event.key)
     setPressed(1);
     }
   })
